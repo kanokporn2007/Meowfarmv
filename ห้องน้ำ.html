@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MeowFarm - ขายอาหารแมว</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #444;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 30px 0 10px;
+      color: #0d1c63;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 220px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      font-size: 1rem;
+      margin: 10px 0 5px;
+    }
+
+    .price {
+      color: #28a745;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .add-cart-btn {
+      margin-top: 10px;
+      display: inline-block;
+      background-color: #ff7a00;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .add-cart-btn i {
+      margin-right: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #0d1c63;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🐾 MeowFarm</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="#contact">ติดต่อ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2 class="section-title">ห้องน้ำแมวและทรายแมว</h2>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-LvYITW2SfMcLFger_K_jo44Otd1LD6pIWQ&s" alt="ห้องน้ำแมวพร้อมฝาปิด" />
+      <h3>ห้องน้ำแมวพร้อมฝาปิด</h3>
+      <p class="price">฿850</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjhpX7IFyTeByLpheMeMp3Epeh7cfMgPYraA&s" alt="ห้องน้ำแมวแบบเปิด" />
+      <h3>ห้องน้ำแมวแบบเปิด</h3>
+      <p class="price">฿450</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://image.makewebeasy.net/makeweb/m_1920x0/7lXKszpt0/DefaultData/441904825_902180618617212_4609990050431918351_n_04_01.jpg?v=202405291424" alt="ถาดรองทรายแมว" />
+      <h3>ถาดรองทรายแมวแบบถอดล้างได้</h3>
+      <p class="price">฿390</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIBxp2e0xwLw2z6E_y4Xbc1bJjhEpjxM5Z5g&s" alt="กระบะทรายแมวพลาสติก" />
+      <h3>กระบะทรายแมวพลาสติก</h3>
+      <p class="price">฿280</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOyDjMC6NvoHLeFlerU4hBfbJBM7I_2VE2xw&s" alt="กระบะทรายแมวมีตะแกรงกรอง" />
+      <h3>กระบะทรายแมวพร้อมตะแกรงกรอง</h3>
+      <p class="price">฿320</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://thonglorpetshop.com/wp-content/uploads/2020/05/3-11.png" alt="ทรายแมวเม็ดกลม" />
+      <h3>ทรายแมวเม็ดกลมดูดซับดี</h3>
+      <p class="price">฿150 / 5 ลิตร</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ0oxAZv6XgYW69pqI_8OhBl4DvpuznxuMOA&s" alt="ทรายแมวกลิ่นลาเวนเดอร์" />
+      <h3>ทรายแมวกลิ่นลาเวนเดอร์</h3>
+      <p class="price">฿180 / 5 ลิตร</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU-cvwQIaHMoMubIq_Iqd3klVdRnyCqDKjNA&s" alt="ทรายแมวทำจากไม้" />
+      <h3>ทรายแมวทำจากไม้ธรรมชาติ</h3>
+      <p class="price">฿170 / 5 ลิตร</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0NcrJ_PX4QVNoiCgG6aMFz-yRaUsmOyhemg&s" alt="ทรายแมวเกล็ดละเอียด" />
+      <h3>ทรายแมวเกล็ดละเอียด</h3>
+      <p class="price">฿160 / 5 ลิตร</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://inwfile.com/s-fl/0mgv6d.jpg" alt="ที่ตักทรายแมวพลาสติก" />
+      <h3>ที่ตักทรายแมวพลาสติก</h3>
+      <p class="price">฿50</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV3dbZBcKkv5yjrbD8SN9-XTW3o7ryUSJT5Q&s" alt="ที่ตักทรายแมวสแตนเลส" />
+      <h3>ที่ตักทรายแมวสแตนเลส</h3>
+      <p class="price">฿120</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://shop.osdco.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/y/e/yess-cat-litter-coffee-5l-f.jpg" alt="ทรายแมวกลิ่นกาแฟ" />
+      <h3>ทรายแมวกลิ่นกาแฟ</h3>
+      <p class="price">฿195 / 5 ลิตร</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://shop.osdco.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/o/mock-up-01.png" alt="ทรายแมวสกัดจากไม้" />
+      <h3>ทรายแมวสกัดจากไม้ธรรมชาติ</h3>
+      <p class="price">฿190 / 5 ลิตร</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ85Rz7lqJ5KR1ql6k6gBcfoYdodyZLpPskrQ&s" alt="ถุงใส่ทรายแมวแบบใช้ซ้ำ" />
+      <h3>ถุงใส่ทรายแมวแบบใช้ซ้ำได้</h3>
+      <p class="price">฿65</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREaN134c-roOUok0Jb4w_fm8frcoUXREuhEw&s" alt="ทรายแมวเม็ดค็อกซ์" />
+      <h3>ทรายแมวเม็ดค็อกซ์</h3>
+      <p class="price">฿175 / 5 ลิตร</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpSCj_b5COZ4Pm9UQxZWSCwfsKjA8tzspQqQ&s" alt="ทรายแมวแคลเซียม" />
+      <h3>ทรายแมวแคลเซียม</h3>
+      <p class="price">฿180 / 5 ลิตร</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3pqP_N9sraC-8MLUSczF4EIhOunaat_Kdxw&s" alt="ถังใส่ทรายแมว" />
+      <h3>ถังเก็บทรายแมว</h3>
+      <p class="price">฿350</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAI3Xo5nid8U0nDgZxFPLiU5HfOCxQLhMLmQ&s" alt="ห้องน้ำแมวอัตโนมัติ" />
+      <h3>ห้องน้ำแมวอัตโนมัติ</h3>
+      <p class="price">฿6,500</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+  </div>
+
+  <footer id="contact">
+    <p>© 2025 MeowFarm. All rights reserved.</p>
+    <p>โทร: 081-234-5678</p>
+    <p>อีเมล: contact@meowfarm.com</p>
+    <p>Facebook: <a href="https://www.facebook.com/MeowFarm" target="_blank">facebook.com/MeowFarm</a></p>
+    <p>Line: @meowfarm</p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html> <!-- ระบุว่าเป็นเอกสาร HTML5 -->
+<html lang="th"> <!-- เริ่มต้น HTML โดยกำหนดภาษาเป็นภาษาไทย -->
+<head>
+  <meta charset="UTF-8" /> <!-- กำหนดการเข้ารหัสเป็น UTF-8 รองรับภาษาไทย -->
+  <title>แมวเปอร์เชีย</title> <!-- ตั้งชื่อหน้าเว็บไซต์ -->
+  <style>
+    html {
+      scroll-behavior: smooth; /* เลื่อนหน้าแบบนุ่มนวล */
+    }
+
+    :root {
+      --primary-color: #0d1c63;  /* สีหลัก: น้ำเงินเข้ม */
+      --accent-color: #ff9800;   /* สีรอง: ส้ม */
+      --text-color: #333;        /* สีตัวอักษรหลัก */
+      --light-text-color: #666;  /* สีตัวอักษรรอง */
+      --border-color: #eee;      /* สีเส้นขอบจาง ๆ */
+      --shadow-color: rgba(0, 0, 0, 0.1); /* สีเงาจาง */
+      --bg-color: #f9f9f9;       /* สีพื้นหลัง */
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif; /* แบบอักษร */
+      margin: 0; /* ไม่มีระยะขอบรอบข้าง */
+      background-color: var(--bg-color); /* ใช้สีพื้นหลังจาก root */
+      color: var(--text-color); /* ใช้สีตัวอักษรหลัก */
+    }
+
+    header {
+      background-color: #fff; /* พื้นหลังขาว */
+      padding: 10px 20px; /* ระยะห่างรอบข้าง */
+      box-shadow: 0 2px 8px var(--shadow-color); /* เงาใต้หัวเว็บ */
+      display: flex; /* จัดให้อยู่แถวเดียว */
+      justify-content: space-between; /* เว้นระหว่างโลโก้กับเมนู */
+      align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    }
+
+    header h1 {
+      margin: 0; /* ไม่มี margin */
+      color: var(--primary-color); /* ใช้สีน้ำเงินเข้ม */
+    }
+
+    nav ul {
+      list-style: none; /* ไม่มีจุดหน้ารายการ */
+      display: flex; /* จัดเรียงแนวนอน */
+      gap: 20px; /* ช่องว่างระหว่างรายการ */
+      margin: 0; /* ไม่มี margin */
+      padding: 0; /* ไม่มี padding */
+    }
+
+    nav ul li a {
+      text-decoration: none; /* ไม่มีขีดใต้ลิงก์ */
+      color: var(--text-color); /* สีลิงก์ */
+      font-weight: 600; /* ตัวหนานิด ๆ */
+    }
+
+    .login-btn {
+      background-color: var(--accent-color); /* สีปุ่มส้ม */
+      color: white; /* ตัวอักษรสีขาว */
+      padding: 6px 12px; /* ขนาด padding */
+      border-radius: 4px; /* ขอบโค้งเล็กน้อย */
+      margin-left: 20px; /* ระยะห่างจากเมนู */
+    }
+
+    .container {
+      max-width: 1200px; /* ความกว้างสูงสุด */
+      margin: 30px auto; /* จัดกลาง + margin ด้านบน/ล่าง */
+      padding: 20px; /* ระยะห่างขอบ container */
+      display: flex; /* แบ่งสองคอลัมน์ */
+      gap: 30px; /* ช่องว่างระหว่างคอลัมน์ */
+      flex-wrap: wrap; /* ให้พับลงถ้าจอแคบ */
+      background-color: #fff; /* พื้นหลังขาว */
+      border-radius: 10px; /* ขอบโค้ง container */
+      box-shadow: 0 2px 8px var(--shadow-color); /* เงา container */
+    }
+
+    .image-gallery {
+      flex: 2; /* พื้นที่ 2 ส่วน */
+      min-width: 280px; /* กำหนดขนาดขั้นต่ำ */
+    }
+
+    .image-slider {
+      display: flex; /* ให้รูปเรียงแนวนอน */
+      overflow-x: auto; /* เลื่อนในแนวนอน */
+      scroll-snap-type: x mandatory; /* จับภาพให้หยุดพอดีภาพ */
+      gap: 15px; /* ช่องว่างระหว่างภาพ */
+      scroll-behavior: smooth; /* เลื่อนอย่างนุ่มนวล */
+    }
+
+    .image-slider img {
+      width: 300px; /* ขนาดภาพเล็กลง */
+      aspect-ratio: 1 / 1; /* ทำให้เป็นจัตุรัส */
+      object-fit: cover; /* ครอบภาพให้พอดี */
+      border-radius: 10px; /* ขอบมน */
+      scroll-snap-align: center; /* หยุดตรงกลาง */
+      flex: 0 0 auto; /* ขนาดภาพคงที่ */
+    }
+
+    .details-info {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .details-info h2 {
+      color: var(--primary-color);
+      margin-top: 0;
+    }
+
+    .details-info .price {
+      font-size: 2rem;
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .details-info p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--light-text-color);
+    }
+
+    .details-info p strong {
+      color: var(--text-color);
+    }
+
+    .seller-info {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .username {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column; /* ปรับแนวตั้งในจอเล็ก */
+      }
+
+      .image-gallery,
+      .details-info {
+        width: 100%; /* เต็มจอ */
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #0d1c63;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MeowFarm</h1> <!-- ชื่อเว็บไซต์ -->
+    <nav>
+      <ul>
+        <li><a href="D:\3-1 ปัญหาพิเศษ\MeowFarm\index.html">หน้าหลัก</a></li>
+        <li><a href="#contact">ติดต่อ</a></li> <!-- แก้ลิงก์ตรงนี้ -->
+      </ul>
+    </nav>
+  </header>
+
+  <h2 style="text-align: center;">
+    ลูกค้าสามารถเลือกดูแมวที่สนใจและติดต่อมาทาง inbox ต่างๆที่ให้ไว้ด้านล่าง
+  </h2>
+
+  <!-- 1 -->
+  <div class="container">
+    <div class="image-gallery">
+      <div class="image-slider" id="slider">
+        <img src="Persian สายไหม1.png" alt="แมวเปอร์เซีย 1" />
+        <img src="Persian สายไหม2.png" alt="แมวเปอร์เซีย 2" />
+        <img src="Persian สายไหม3.png" alt="แมวเปอร์เซีย 3" />
+      </div>
+    </div>
+    <div class="details-info">
+      <h2>น้องสายไหม</h2>
+      <p class="price">฿ 1,000</p>
+      <p><strong>สายพันธุ์:</strong> เปอร์เซีย</p>
+      <p><strong>เพศ:</strong> เมีย</p>
+      <p><strong>ทำวัคซีนแล้ว:</strong> ✅</p>
+      <p><strong>อายุ:</strong> 2 เดือน</p>
+      <p><strong>สถานที่:</strong> กรุงเทพฯ</p>
+      <p><strong>รายละเอียด:</strong> แมวเปอร์เซียแท้ หน้าหล่น ขนฟูสวย อายุ 2 เดือน 3 สี กินอาหารเม็ดอาหารเปียกได้ เข้ากระบะทรายเป็น ส่งให้ฟรีค่ะ หรือมารับเองได้ ที่ประชาอุทิศ 59 ค่ะ</p>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="container">
+    <div class="image-gallery">
+      <div class="image-slider" id="slider">
+        <img src="Persian มิสุ1.png" alt="แมวเปอร์เซีย 1" />
+        <img src="Persian มิสุ2.png" alt="แมวเปอร์เซีย 2" />
+        <img src="Persian มิสุ3.png" alt="แมวเปอร์เซีย 3" />
+      </div>
+    </div>
+    <div class="details-info">
+      <h2>น้องมิสุ</h2>
+      <p class="price">฿ 5,000</p>
+      <p><strong>สายพันธุ์:</strong> เปอร์เซีย</p>
+      <p><strong>เพศ:</strong> เมีย</p>
+      <p><strong>ทำวัคซีนแล้ว:</strong> ✅</p>
+      <p><strong>อายุ:</strong> 3 เดือน</p>
+      <p><strong>สถานที่:</strong> ชลบุรี</p>
+      <p><strong>รายละเอียด:</strong> แมวเปอร์เซียแท้อายุ 3 เดือน ฉีดวัคซีนแล้วฉีด วัคซีนป้องกันพิษสุนัขบ้าแล้ว ขับถ่ายในกระบะทราย</p>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="container">
+    <div class="image-gallery">
+      <div class="image-slider" id="slider">
+        <img src="Persian ไข่เค็ม1.png" alt="แมวเปอร์เซีย 1" />
+        <img src="Persian ไข่เค็ม2.jpg" alt="แมวเปอร์เซีย 2" />
+        <img src="Persian ไข่เค็ม3.jpg" alt="แมวเปอร์เซีย 3" />
+      </div>
+    </div>
+    <div class="details-info">
+      <h2>น้องไข่เค็ม</h2>
+      <p class="price">฿ 2,000</p>
+      <p><strong>สายพันธุ์:</strong> เปอร์เซีย</p>
+      <p><strong>เพศ:</strong> ผู้</p>
+      <p><strong>ทำวัคซีนแล้ว:</strong> -</p>
+      <p><strong>อายุ:</strong> 1 เดือน</p>
+      <p><strong>สถานที่:</strong> กรุงเทพฯ</p>
+      <p><strong>รายละเอียด:</strong> ลูกแมวหิมาลายันเปอร์เชีย เพศผู้ เกิด 15 พ.ค.กินอาหารเอง เข้ากระปะทรายเองได้</p>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="container">
+    <div class="image-gallery">
+      <div class="image-slider" id="slider">
+        <img src="Persian ทองก้อน1.jpg" alt="แมวเปอร์เซีย 1" />
+        <img src="Persian ทองก้อน2.jpg" alt="แมวเปอร์เซีย 2" />
+        <img src="Persian ทองก้อน3.jpg" alt="แมวเปอร์เซีย 3" />
+      </div>
+    </div>
+    <div class="details-info">
+      <h2>น้องทองก้อน</h2>
+      <p class="price">฿ 3,000</p>
+      <p><strong>สายพันธุ์:</strong> เปอร์เซีย</p>
+      <p><strong>เพศ:</strong> ผู้</p>
+      <p><strong>ทำวัคซีนแล้ว:</strong> ✅</p>
+      <p><strong>อายุ:</strong> 2 เดือน</p>
+      <p><strong>สถานที่:</strong> กรุงเทพฯ</p>
+      <p><strong>รายละเอียด:</strong> ลูกแมวเปอร์เซียหน้าบี้หวานๆฟอร์มหล่อๆเพศผู้หาบ้านครับตอนนี้อายุจะได้2เดือนละครับ สำหรับใครที่รักและชอบน้องแมวจริงๆสนใจอยากเลี้ยงแมวพันธุ์
+      ทักมาคุยกันได้ครับยินดีแนะนำให้ครับ บ้านน้องแมวอยู่ บางกะปิ กทม.</p>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="container">
+    <div class="image-gallery">
+      <div class="image-slider" id="slider">
+        <img src="Persian มังกี้1.jpg" alt="แมวเปอร์เซีย 1" />
+        <img src="Persian มังกี้2.jpg" alt="แมวเปอร์เซีย 2" />
+        <img src="Persian มังกี้31.jpg" alt="แมวเปอร์เซีย 3" />
+      </div>
+    </div>
+    <div class="details-info">
+      <h2>น้องมังกี้</h2>
+      <p class="price">฿ 1,000</p>
+      <p><strong>สายพันธุ์:</strong> เปอร์เซีย</p>
+      <p><strong>เพศ:</strong> ผู้</p>
+      <p><strong>ทำวัคซีนแล้ว:</strong> ✅</p>
+      <p><strong>อายุ:</strong> 2 เดือน</p>
+      <p><strong>สถานที่:</strong> เชียงใหม่</p>
+      <p><strong>รายละเอียด:</strong> ตัวผู้น่ารัก ฉีดวัคซีนครบ</p>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="container">
+    <div class="image-gallery">
+      <div class="image-slider" id="slider">
+        <img src="Persian ปามี่1.jpg" alt="แมวเปอร์เซีย 1" />
+        <img src="Persian ปามี่2.jpg" alt="แมวเปอร์เซีย 2" />
+        <img src="Persian ปามี่3.jpg" alt="แมวเปอร์เซีย 3" />
+      </div>
+    </div>
+    <div class="details-info">
+      <h2>น้องปามี่</h2>
+      <p class="price">฿ 12,000</p>
+      <p><strong>สายพันธุ์:</strong> เปอร์เซีย</p>
+      <p><strong>เพศ:</strong> เมีย</p>
+      <p><strong>ทำวัคซีนแล้ว:</strong> ✅</p>
+      <p><strong>อายุ:</strong> 1.5 เดือน</p>
+      <p><strong>สถานที่:</strong> กรุงเทพฯ</p>
+      <p><strong>รายละเอียด:</strong> ขายแมวเปอร์เซียตาสองสี เพศเมีย</p>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="container">
+    <div class="image-gallery">
+      <div class="image-slider" id="slider">
+        <img src="Persian ไทเกอร์1.jpg" alt="แมวเปอร์เซีย 1" />
+        <img src="Persian ไทเกอร์2.jpg" alt="แมวเปอร์เซีย 2" />
+        <img src="Persian ไทเกอร์3.jpg" alt="แมวเปอร์เซีย 3" />
+      </div>
+    </div>
+    <div class="details-info">
+      <h2>น้องไทเกอร์</h2>
+      <p class="price">฿ 1500</p>
+      <p><strong>สายพันธุ์:</strong> เปอร์เซีย</p>
+      <p><strong>เพศ:</strong> ผู้</p>
+      <p><strong>ทำวัคซีนแล้ว:</strong> ✅</p>
+      <p><strong>อายุ:</strong> 3 เดือน</p>
+      <p><strong>สถานที่:</strong> ระยอง</p>
+      <p><strong>รายละเอียด:</strong>แมวเปอร์เชีย อายุ 3 เดือน กินอาหารเองเข้ากะบะเองได้ ขอคนสะดวกมารับเองนะคะ</p>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="container">
+    <div class="image-gallery">
+      <div class="image-slider" id="slider">
+        <img src="Persian ปีโป้1.jpg" alt="แมวเปอร์เซีย 1" />
+        <img src="Persian ปีโป้2.jpg" alt="แมวเปอร์เซีย 2" />
+        <img src="Persian ปีโป้3.jpg" alt="แมวเปอร์เซีย 3" />
+      </div>
+    </div>
+    <div class="details-info">
+      <h2>น้องปีโป้</h2>
+      <p class="price">฿ 500</p>
+      <p><strong>สายพันธุ์:</strong> เปอร์เซีย</p>
+      <p><strong>เพศ:</strong> เมีย</p>
+      <p><strong>ทำวัคซีนแล้ว:</strong> ✅</p>
+      <p><strong>อายุ:</strong> 2 เดือน</p>
+      <p><strong>สถานที่:</strong> สงขลา</p>
+      <p><strong>รายละเอียด:</strong> ปีโป้เป็นสัตว์เลี้ยงที่มีความน่ารัก อ่อนโยน และเข้ากับคนได้ดี ทำให้เป็นที่นิยมในหมู่คนรักสัตว์</p>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="container">
+    <div class="image-gallery">
+      <div class="image-slider" id="slider">
+        <img src="Persian ไข่ตุ๋น1.jpg" alt="แมวเปอร์เซีย 1" />
+        <img src="Persian ไข่ตุ๋น2.jpg" alt="แมวเปอร์เซีย 2" />
+        <img src="Persian ไข่ตุ๋น3.jpg" alt="แมวเปอร์เซีย 3" />
+      </div>
+    </div>
+    <div class="details-info">
+      <h2>น้องไข่ตุ๋น น้องไข่เต่า และน้องไข่เจียว</h2>
+      <p class="price">฿ 1500</p>
+      <p><strong>สายพันธุ์:</strong> เปอร์เซีย</p>
+      <p><strong>เพศ:</strong> เมีย</p>
+      <p><strong>ทำวัคซีนแล้ว:</strong> ✅</p>
+      <p><strong>อายุ:</strong> 2 เดือน</p>
+      <p><strong>สถานที่:</strong> ระยอง</p>
+      <p><strong>รายละเอียด:</strong> สามารถแอดไลท์ เพิ่มรูป วีดีโอ ได้นะคะ 3 ตัว</p>
+    </div>
+  </div>
+
+  <!-- ส่วนท้าย -->
+  <footer id="contact">
+    <p>© 2025 MeowFarm. All rights reserved.</p>
+    <p>โทร: 081-234-5678</p>
+    <p>อีเมล: contact@meowfarm.com</p>
+    <p>Facebook: <a href="https://www.facebook.com/MeowFarm" target="_blank">facebook.com/MeowFarm</a></p>
+    <p>Line: @meowfarm</p>
+  </footer>
+</body>
+</html>

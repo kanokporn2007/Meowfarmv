@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MeowFarm - ของเล่นแมว</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #444;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 30px 0 10px;
+      color: #0d1c63;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 220px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      font-size: 1rem;
+      margin: 10px 0 5px;
+    }
+
+    .price {
+      color: #28a745;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .add-cart-btn {
+      margin-top: 10px;
+      display: inline-block;
+      background-color: #ff7a00;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .add-cart-btn i {
+      margin-right: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #0d1c63;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🐾 MeowFarm</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="#contact">ติดต่อ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2 class="section-title">ของเล่นแมว</h2>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://www.dtac.co.th/cms-storage/dtacliv/Liv-Cat-toy_M-Content-images-768x386-2.jpg" alt="ของเล่นแมวแบบมีลูกบอล" />
+      <h3>ของเล่นแมวแบบมีลูกบอล</h3>
+      <p class="price">฿320</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://tailybuddy.com/products/8214/120201879_449002292726027_5618404450679012111_n.jpg" alt="ของเล่นแมวที่มีขนนก" />
+      <h3>ของเล่นแมวขนนก</h3>
+      <p class="price">฿180</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjugJAzj-Vqj5NrInA8iPXBxUdaN5hw9RoUg&s" alt="ของเล่นแมวผ้ากระดิ่ง" />
+      <h3>ของเล่นแมวผ้ากระดิ่ง</h3>
+      <p class="price">฿150</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoreXRqxnafpjhtCdodvht-uL7gjgeuIDRhA&s" alt="ของเล่นแมวติดขนสีสัน" />
+      <h3>ของเล่นแมวติดขนสีสัน</h3>
+      <p class="price">฿140</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYawVvfYBTQeMTWrD5XJNzWySiXuRw3ALwIw&s" alt="ของเล่นแมวมีรูปร่างหลากหลาย" />
+      <h3>ของเล่นแมวรูปทรงหลากหลาย</h3>
+      <p class="price">฿160</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://media.allonline.7eleven.co.th/pdmain/580601-00-product-for-pets-ccpets.jpg" alt="ของเล่นแมวแบบมีถุง" />
+      <h3>ของเล่นแมวแบบมีถุง</h3>
+      <p class="price">฿120</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyM3WdBO0qttwT9ChBXZQgQ32iktxwZNPYdg&s" alt="ของเล่นแมวแบบกระดิ่ง" />
+      <h3>ของเล่นแมวแบบกระดิ่ง</h3>
+      <p class="price">฿130</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://www.top10.in.th/wp-content/uploads/2020/08/%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B8%A7-%E0%B8%A2%E0%B8%B5%E0%B9%88%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B9%84%E0%B8%AB%E0%B8%99%E0%B8%94%E0%B8%B5.jpg" alt="ของเล่นแมวแบบผ้า" />
+      <h3>ของเล่นแมวแบบผ้า</h3>
+      <p class="price">฿110</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://media.thairath.co.th/image/A38XBUkm1m5RLjb48fx41sTas1a2h5eg0VY9GCiTKHgRay0e9vA1.wepb" alt="ของเล่นแมวแบบไฟฟ้า" />
+      <h3>ของเล่นแมวแบบไฟฟ้า</h3>
+      <p class="price">฿450</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwnLIqwdIGvV26eBuf_NEsZY3quIvxGXObLw&s" alt="ของเล่นแมวแบบวงกลม" />
+      <h3>ของเล่นแมวแบบวงกลม</h3>
+      <p class="price">฿200</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Lt-selBZQ9eZ4BSWAkD27r14LGKQtU2olw&s" alt="ของเล่นแมวแบบยาง" />
+      <h3>ของเล่นแมวแบบยาง</h3>
+      <p class="price">฿170</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyquESZWfst1L3wWhLFZxMZfWL8u2vOsPCJg&s" alt="ของเล่นแมวแบบลวด" />
+      <h3>ของเล่นแมวแบบลวด</h3>
+      <p class="price">฿160</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://img.lazcdn.com/g/ff/kf/Sa1efb48d0e884c179ff49ebbeef2f32bu.jpg_720x720q80.jpg" alt="ของเล่นแมวแบบปุย" />
+      <h3>ของเล่นแมวแบบปุย</h3>
+      <p class="price">฿190</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://filebroker-cdn.lazada.co.th/kf/S5a8865d2b982462cb2dc3815fce7f589Q.jpg" alt="ของเล่นแมวแบบกลมๆ" />
+      <h3>ของเล่นแมวแบบกลมๆ</h3>
+      <p class="price">฿160</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://www.feedmeplease.com/images/pdimg/3027/1.webp" alt="ของเล่นแมวแบบผ้าไหม" />
+      <h3>ของเล่นแมวแบบผ้าไหม</h3>
+      <p class="price">฿210</p>
+      <button class="add-cart-btn"><i class="fas fa-cart-plus"></i>เพิ่มลงตะกร้า</button>
+    </div>
+
+  </div>
+
+  <footer id="contact">
+    <p>© 2025 MeowFarm. All rights reserved.</p>
+    <p>โทร: 081-234-5678</p>
+    <p>อีเมล: contact@meowfarm.com</p>
+    <p>Facebook: <a href="https://www.facebook.com/MeowFarm" target="_blank">facebook.com/MeowFarm</a></p>
+    <p>Line: @meowfarm</p>
+  </footer>
+
+</body>
+
+</html>
